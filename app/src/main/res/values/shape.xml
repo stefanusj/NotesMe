@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ShapeAppearance.NotesMe.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent"></style>
+
+    <style name="ShapeAppearance.NotesMe.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent"></style>
+
+    <style name="ShapeAppearance.NotesMe.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent"></style>
+
+</resources>

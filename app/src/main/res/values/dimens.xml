@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_1">4dp</dimen>
+    <dimen name="padding_2">8dp</dimen>
+    <dimen name="padding_3">16dp</dimen>
+    <dimen name="padding_4">32dp</dimen>
+
+    <dimen name="margin_1">4dp</dimen>
+    <dimen name="margin_2">8dp</dimen>
+    <dimen name="margin_3">16dp</dimen>
+    <dimen name="margin_4">32dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="image_height">192dp</dimen>
+    <dimen name="icon_size_l">64dp</dimen>
+    <dimen name="icon_size_m">48dp</dimen>
+    <dimen name="icon_size_s">36dp</dimen>
+    <dimen name="icon_size_xs">24dp</dimen>
+</resources>
