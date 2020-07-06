@@ -1,8 +1,12 @@
-package com.stefanusj.notesme
+package com.stefanusj.notesme.ui
 
 import android.app.Application
 import androidx.annotation.StringRes
 import androidx.lifecycle.*
+import com.stefanusj.notesme.NotesMe
+import com.stefanusj.notesme.R
+import com.stefanusj.notesme.helper.Event
+import com.stefanusj.notesme.repository.AppRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
@@ -25,6 +29,12 @@ abstract class BaseViewModel(application: Application): AndroidViewModel(applica
 	 * Main Repository Application, Single Source of Truth
 	 */
 	protected val repository: AppRepository by inject()
+
+	/**
+	 *  Return [_authenticated] true if user is authenticated
+	 */
+	private val _authenticated = MutableLiveData<Boolean>()
+	val authenticated: LiveData<Boolean> = _authenticated
 
 	/**
 	 * Show a loading spinner if [isLoading] is true
@@ -64,9 +74,19 @@ abstract class BaseViewModel(application: Application): AndroidViewModel(applica
 			} catch (e: IOException) {
 				e.printStackTrace()
 				postMessage(R.string.network_problem)
+			} catch (e: Exception) {
+				e.printStackTrace()
+				postMessage(e.message.toString())
 			} finally {
 				_isLoading.value = false
 			}
+		}
+	}
+
+	@OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+	fun checkIfAuthenticated() {
+		repository.user().also { user ->
+			_authenticated.value = user != null
 		}
 	}
 

@@ -2,6 +2,8 @@ package com.stefanusj.notesme
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.stefanusj.notesme.di.appModule
+import com.stefanusj.notesme.repository.ThemeRepository
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

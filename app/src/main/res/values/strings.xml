@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NotesMe</string>
+    <string name="short_name">Notes</string>
+
+    <string name="sign_out">Keluar</string>
+    <string name="delete_account">Hapus Akun</string>
+
+    <string name="login_title">Selamat Datang !</string>
+    <string name="login_tos">Harap masuk menggunakan akun Google anda. Jangan pernah menyimpan hal yang penting dalam aplikasi ini.</string>
 
     <string name="network_problem">Please check your connection!</string>
 </resources>

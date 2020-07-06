@@ -1,4 +1,4 @@
-package com.stefanusj.notesme
+package com.stefanusj.notesme.helper
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner
@@ -49,7 +49,9 @@ inline fun <T> LiveData<Event<T>>.observeEvent(
     owner: LifecycleOwner,
     crossinline onEventUnhandledContent: (T) -> Unit
 ): EventObserver<T> {
-    val wrappedObserver = EventObserver<T> { t -> onEventUnhandledContent.invoke(t) }
-    observe(owner, wrappedObserver)
-    return wrappedObserver
+	val wrappedObserver = EventObserver<T> { t ->
+		onEventUnhandledContent.invoke(t)
+	}
+	observe(owner, wrappedObserver)
+	return wrappedObserver
 }

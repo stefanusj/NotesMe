@@ -5,6 +5,7 @@
 
     <item>
         <bitmap
+            android:tint="?colorOnBackground"
             android:gravity="center"
             android:src="@drawable/splash_icon" />
     </item>

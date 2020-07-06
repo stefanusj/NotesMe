@@ -1,4 +1,4 @@
-package com.stefanusj.notesme
+package com.stefanusj.notesme.repository
 
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
@@ -18,8 +18,8 @@ class ThemeRepository : KoinComponent {
 
     val nightMode: Int
         get() = preferences.getInt(
-            PREFERENCE_THEME_NAME,
-            PREFERENCE_NIGHT_MODE_DEF_VAL
+	        PREFERENCE_THEME_NAME,
+	        PREFERENCE_NIGHT_MODE_DEF_VAL
         )
 
     private val _nightModeLive: MutableLiveData<Int> = MutableLiveData()
@@ -28,13 +28,13 @@ class ThemeRepository : KoinComponent {
         get() = AppCompatDelegate.MODE_NIGHT_YES == nightMode
         set(value) = preferences.edit {
             putInt(
-                PREFERENCE_THEME_NAME, if (value) {
-                    _nightModeLive.value = AppCompatDelegate.MODE_NIGHT_YES
-                    AppCompatDelegate.MODE_NIGHT_YES
-                } else {
-                    _nightModeLive.value = AppCompatDelegate.MODE_NIGHT_NO
-                    AppCompatDelegate.MODE_NIGHT_NO
-                }
+	            PREFERENCE_THEME_NAME, if (value) {
+		            _nightModeLive.value = AppCompatDelegate.MODE_NIGHT_YES
+		            AppCompatDelegate.MODE_NIGHT_YES
+	            } else {
+		            _nightModeLive.value = AppCompatDelegate.MODE_NIGHT_NO
+		            AppCompatDelegate.MODE_NIGHT_NO
+	            }
             )
             field = value
         }

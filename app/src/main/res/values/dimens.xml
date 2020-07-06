@@ -10,9 +10,12 @@
     <dimen name="margin_2">8dp</dimen>
     <dimen name="margin_3">16dp</dimen>
     <dimen name="margin_4">32dp</dimen>
+    <dimen name="margin_5">64dp</dimen>
 
     <dimen name="divider_height">1dp</dimen>
     <dimen name="image_height">192dp</dimen>
+    <dimen name="icon_size_xxl">128dp</dimen>
+    <dimen name="icon_size_xl">96dp</dimen>
     <dimen name="icon_size_l">64dp</dimen>
     <dimen name="icon_size_m">48dp</dimen>
     <dimen name="icon_size_s">36dp</dimen>

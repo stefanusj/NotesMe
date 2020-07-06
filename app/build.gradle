@@ -62,4 +62,5 @@ dependencies {
     implementation "com.google.firebase:firebase-auth-ktx:$firebaseAuthVersion"
     implementation "com.google.firebase:firebase-firestore-ktx:$firebaseFirestoreVersion"
     implementation "com.google.firebase:firebase-storage-ktx:$firebaseStorageVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

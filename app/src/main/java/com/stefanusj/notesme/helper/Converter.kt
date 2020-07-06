@@ -1,4 +1,4 @@
-package com.stefanusj.notesme
+package com.stefanusj.notesme.helper
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable

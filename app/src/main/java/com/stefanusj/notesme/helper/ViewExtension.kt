@@ -1,7 +1,6 @@
-package com.stefanusj.notesme
+package com.stefanusj.notesme.helper
 
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 
 fun View.show() {
     this.visibility = View.VISIBLE
