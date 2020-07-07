@@ -19,10 +19,12 @@
         tools:context=".ui.note.NoteFragment">
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/et_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/short_name"
-            android:textAppearance="?textAppearanceHeadline5"
+            android:textAppearance="?textAppearanceHeadline4"
+            android:textColor="?colorOnBackground"
             app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/iv_avatar" />
@@ -36,6 +38,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.NotesMe.Circle" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/margin_3"
+            app:constraint_referenced_ids="et_title,iv_avatar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_note"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier"
+            tools:listitem="@layout/note_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

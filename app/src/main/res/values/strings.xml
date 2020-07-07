@@ -3,11 +3,21 @@
     <string name="app_name">NotesMe</string>
     <string name="short_name">Notes</string>
 
-    <string name="sign_out">Keluar</string>
-    <string name="delete_account">Hapus Akun</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="delete_account">Delete Account</string>
+
+    <string name="note_add">Add Note</string>
+    <string name="note_save">Save Note</string>
+    <string name="note_save_notification">Successfully save note</string>
+    <string name="note_edit">Update Note</string>
+    <string name="note_edit_notification">Successfully update note</string>
+    <string name="note_delete">Delete</string>
+    <string name="note_delete_notification">Successfully delete note</string>
 
     <string name="login_title">Selamat Datang !</string>
     <string name="login_tos">Harap masuk menggunakan akun Google anda. Jangan pernah menyimpan hal yang penting dalam aplikasi ini.</string>
 
     <string name="network_problem">Please check your connection!</string>
+    <string name="hint_note_text">Type something…</string>
+    <string name="hint_note_title">Title</string>
 </resources>

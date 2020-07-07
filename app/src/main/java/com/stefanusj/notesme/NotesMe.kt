@@ -21,6 +21,7 @@ class NotesMe : Application() {
 			modules(appModule)
 		}
 
-		AppCompatDelegate.setDefaultNightMode(themeRepository.nightMode)
+		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 	}
 }

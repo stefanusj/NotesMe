@@ -2,12 +2,16 @@
 <resources>
 
     <style name="ShapeAppearance.NotesMe.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">@dimen/corner_small</item>
     </style>
 
-    <style name="ShapeAppearance.NotesMe.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent" />
+    <style name="ShapeAppearance.NotesMe.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">@dimen/corner_medium</item>
+    </style>
 
-    <style name="ShapeAppearance.NotesMe.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent" />
+    <style name="ShapeAppearance.NotesMe.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerSize">@dimen/corner_large</item>
+    </style>
 
     <style name="ShapeAppearance.NotesMe.Circle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">50%</item>

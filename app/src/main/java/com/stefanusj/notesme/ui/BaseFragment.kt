@@ -45,12 +45,12 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
 		binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 		binding.lifecycleOwner = this
 		lifecycle.addObserver(viewModel)
-		init()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        subscribeUi()
+	    super.onViewCreated(view, savedInstanceState)
+	    init()
+	    subscribeUi()
     }
 }

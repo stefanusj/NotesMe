@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.stefanusj.notesme.ui.profile.ProfileViewModel" />
+            type="com.stefanusj.notesme.ui.note.add.NoteAddViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,13 +30,11 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mb_color"
+            style="@style/Widget.NotesMe.Button.IconOnly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_3"
-            android:onClick="@{viewModel::onDeleteAccountClicked}"
-            android:text="@string/delete_account"
-            android:textColor="?colorOnError"
-            app:backgroundTint="?colorError"
+            app:color="@{viewModel.color}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,50 +45,51 @@
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="mb_back,mb_color" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_avatar"
-            android:layout_width="@dimen/icon_size_xxl"
-            android:layout_height="@dimen/icon_size_xxl"
-            android:layout_marginTop="@dimen/margin_5"
-            app:avatar="@{viewModel.user.photoUrl}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/barrier"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.NotesMe.Circle"
-            tools:src="@tools:sample/avatars" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_3"
-            android:text="@{viewModel.user.displayName}"
-            android:textAppearance="?textAppearanceHeadline6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_avatar"
-            tools:text="@tools:sample/full_names" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_3"
-            android:text="@{viewModel.user.email}"
-            android:textAppearance="?textAppearanceSubtitle1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name"
-            tools:text="@tools:sample/full_names" />
-
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:onClick="@{viewModel::onSignOutClicked}"
-            android:text="@string/sign_out"
+            android:layout_marginStart="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginEnd="@dimen/margin_3"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_note_title"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:text="@={viewModel.title}"
+            android:textAppearance="?textAppearanceHeadline4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_note"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginEnd="@dimen/margin_3"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+            android:hint="@string/hint_note_text"
+            android:inputType="textMultiLine"
+            android:text="@={viewModel.text}"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintBottom_toTopOf="@id/mb_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onSaveClicked}"
+            android:text="@string/note_save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_note"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.NotesMe.Full" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

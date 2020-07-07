@@ -47,11 +47,11 @@
     </style>
 
     <style name="TextAppearance.NotesMe.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/nunito_semibold</item>
+        <item name="fontFamily">@font/nunito_bold</item>
     </style>
 
     <style name="TextAppearance.NotesMe.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/nunito_regular</item>
+        <item name="fontFamily">@font/nunito_semibold</item>
     </style>
 
     <style name="TextAppearance.NotesMe.Body1" parent="TextAppearance.MaterialComponents.Body1">
