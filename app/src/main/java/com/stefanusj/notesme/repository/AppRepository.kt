@@ -57,8 +57,8 @@ class AppRepository(application: Application): KoinComponent {
 
 	suspend fun getNotes(): List<Note> = withContext(IO) {
 		val querySnapshot = noteDatabase
-			.whereEqualTo("userId", auth.currentUser!!.uid)
-			.orderBy("lastModified", DESCENDING)
+			.whereEqualTo(Note::userId.name, auth.currentUser!!.uid)
+			.orderBy(Note::lastModified.name, DESCENDING)
 			.get().await()
 
 		val notes = mutableListOf(Note())
@@ -94,11 +94,11 @@ class AppRepository(application: Application): KoinComponent {
 		color: Int
 	): Void? = withContext(IO) {
 		noteDatabase.document(id).update(
-			mapOf(
-				"color" to color,
-				"title" to title,
-				"text" to text,
-				"lastModified" to time()
+			mapOf<String, Any>(
+				Note::color.name to color,
+				Note::title.name to title,
+				Note::text.name to text,
+				Note::lastModified.name to time()
 			)
 		).await()
 	}

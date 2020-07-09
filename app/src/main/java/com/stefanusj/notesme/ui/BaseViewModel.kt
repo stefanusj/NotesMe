@@ -6,6 +6,8 @@ import androidx.lifecycle.*
 import com.stefanusj.notesme.NotesMe
 import com.stefanusj.notesme.R
 import com.stefanusj.notesme.helper.Event
+import com.stefanusj.notesme.helper.ValidationException
+import com.stefanusj.notesme.model.Validation
 import com.stefanusj.notesme.repository.AppRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -66,11 +68,15 @@ abstract class BaseViewModel(application: Application): AndroidViewModel(applica
 	 * Wrapped inside try catch to make sure apps aren't crash
 	 * while calling data from API
 	 */
-	protected fun launchDataLoad(block: suspend () -> Unit): Job {
+	protected fun launchDataLoad(validator: Validation? = null, block: suspend () -> Unit): Job {
 		return viewModelScope.launch {
 			try {
+				validator?.let { if (!it.isValid) throw ValidationException(validator.problem) }
+
 				_isLoading.value = true
 				block()
+			} catch (e: ValidationException) {
+				e.problem?.let { postMessage(it) }
 			} catch (e: IOException) {
 				e.printStackTrace()
 				postMessage(R.string.network_problem)

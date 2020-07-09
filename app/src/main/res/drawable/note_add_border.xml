@@ -6,7 +6,7 @@
 
     <stroke
         android:width="@dimen/divider_width"
-        android:color="?colorOnBackground"
+        android:color="?attr/colorControlNormal"
         android:dashWidth="12dp"
         android:dashGap="12dp" />
 

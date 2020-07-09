@@ -8,6 +8,7 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.switchMap
 import androidx.navigation.findNavController
 import com.stefanusj.notesme.R
+import com.stefanusj.notesme.helper.Validator.onNoteEditValidation
 import com.stefanusj.notesme.ui.BaseViewModel
 
 class NoteEditViewModel(application: Application): BaseViewModel(application) {
@@ -39,7 +40,9 @@ class NoteEditViewModel(application: Application): BaseViewModel(application) {
 	}
 
 	fun onEditClicked(view: View) {
-		launchDataLoad {
+		val validator = onNoteEditValidation(_id.value, title.value, text.value, color.value)
+
+		launchDataLoad(validator) {
 			repository.updateNote(_id.value!!, title.value!!, text.value!!, color.value!!)
 
 			postMessage(R.string.note_edit_notification)

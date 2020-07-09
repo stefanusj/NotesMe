@@ -17,7 +17,12 @@
     <string name="login_title">Selamat Datang !</string>
     <string name="login_tos">Harap masuk menggunakan akun Google anda. Jangan pernah menyimpan hal yang penting dalam aplikasi ini.</string>
 
-    <string name="network_problem">Please check your connection!</string>
-    <string name="hint_note_text">Type something…</string>
     <string name="hint_note_title">Title</string>
+    <string name="hint_note_text">Type something…</string>
+
+    <string name="network_problem">Please check your connection!</string>
+    <string name="id_empty">Id note is missing!</string>
+    <string name="title_empty">Note must have a title!</string>
+    <string name="text_empty">Fill the note text!</string>
+    <string name="color_empty">Choose your note color!</string>
 </resources>
