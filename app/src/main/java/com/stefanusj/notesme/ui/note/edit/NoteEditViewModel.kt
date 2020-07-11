@@ -8,6 +8,7 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.switchMap
 import androidx.navigation.findNavController
 import com.stefanusj.notesme.R
+import com.stefanusj.notesme.helper.Validator.onNoteDeleteValidation
 import com.stefanusj.notesme.helper.Validator.onNoteEditValidation
 import com.stefanusj.notesme.ui.BaseViewModel
 
@@ -51,7 +52,9 @@ class NoteEditViewModel(application: Application): BaseViewModel(application) {
 	}
 
 	fun onDeleteClicked(view: View) {
-		launchDataLoad {
+		val validator = onNoteDeleteValidation(_id.value)
+
+		launchDataLoad(validator) {
 			repository.deleteNote(_id.value!!)
 
 			postMessage(R.string.note_delete_notification)

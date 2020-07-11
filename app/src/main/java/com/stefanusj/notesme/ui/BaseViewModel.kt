@@ -76,7 +76,7 @@ abstract class BaseViewModel(application: Application): AndroidViewModel(applica
 				_isLoading.value = true
 				block()
 			} catch (e: ValidationException) {
-				e.problem?.let { postMessage(it) }
+				e.message?.let { postMessage(it) }
 			} catch (e: IOException) {
 				e.printStackTrace()
 				postMessage(R.string.network_problem)

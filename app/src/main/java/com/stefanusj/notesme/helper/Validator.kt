@@ -22,10 +22,17 @@ object Validator {
 		text: String?,
 		color: Int?
 	): Validation {
-		if (id.isNullOrBlank()) return Validation(false, R.string.title_empty)
+		if (id.isNullOrBlank()) return Validation(false, R.string.id_empty)
 		if (title.isNullOrBlank()) return Validation(false, R.string.title_empty)
 		if (text.isNullOrBlank()) return Validation(false, R.string.text_empty)
 		if (color.isNullOrZero()) return Validation(false, R.string.color_empty)
+		return Validation(true)
+	}
+
+	fun onNoteDeleteValidation(
+		id: String?
+	): Validation {
+		if (id.isNullOrBlank()) return Validation(false, R.string.id_empty)
 		return Validation(true)
 	}
 }
