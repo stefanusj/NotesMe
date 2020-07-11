@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="mb_back,mb_color" />
+            app:constraint_referenced_ids="mb_back,mb_delete" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_title"

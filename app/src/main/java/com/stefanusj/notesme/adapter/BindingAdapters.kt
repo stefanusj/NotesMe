@@ -7,14 +7,15 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
 import coil.api.load
+import com.google.android.material.button.MaterialButton
 import com.stefanusj.notesme.helper.gone
 import com.stefanusj.notesme.helper.show
 import java.text.SimpleDateFormat
 import java.util.*
 
-@BindingAdapter("isVisible")
-fun isVisible(view: View, boolean: Boolean) {
-	if (boolean) view.show() else view.gone()
+@BindingAdapter("avatar")
+fun avatar(view: ImageView, url: Uri?) {
+	view.load(url)
 }
 
 @BindingAdapter("color")
@@ -37,7 +38,12 @@ fun date(view: TextView, timestamp: Long?) {
 	}
 }
 
-@BindingAdapter("avatar")
-fun avatar(view: ImageView, url: Uri?) {
-	view.load(url)
+@BindingAdapter("icon")
+fun icon(view: MaterialButton, icon: Int) {
+	view.setIconResource(icon)
+}
+
+@BindingAdapter("isVisible")
+fun isVisible(view: View, boolean: Boolean) {
+	if (boolean) view.show() else view.gone()
 }

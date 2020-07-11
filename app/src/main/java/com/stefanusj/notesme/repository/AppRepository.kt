@@ -21,9 +21,12 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
+import org.koin.core.inject
 import java.util.*
 
 class AppRepository(application: Application): KoinComponent {
+
+	val darkModeTheme: DarkModeThemeRepository by inject()
 
 	private val app = application as NotesMe
 

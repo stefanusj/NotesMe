@@ -49,6 +49,7 @@
         <item name="textAppearanceBody1">@style/TextAppearance.NotesMe.Body1</item>
         <item name="textAppearanceBody2">@style/TextAppearance.NotesMe.Body2</item>
         <item name="textAppearanceButton">@style/TextAppearance.NotesMe.Button</item>
+        <item name="colorSheetTitleFont">@font/nunito_bold</item>
 
         <item name="materialButtonStyle">@style/Widget.NotesMe.Button</item>
     </style>

@@ -12,7 +12,6 @@ class ProfileFragment: BaseFragment<ProfileFragmentBinding>() {
 
 	override fun init() = with(binding) {
 		viewModel = this@ProfileFragment.viewModel
-
 	}
 
 }

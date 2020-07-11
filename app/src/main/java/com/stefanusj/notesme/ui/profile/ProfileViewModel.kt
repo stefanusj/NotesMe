@@ -15,9 +15,15 @@ class ProfileViewModel(application: Application): BaseViewModel(application) {
 	private val _user = MutableLiveData<User>()
 	val user: LiveData<User> = _user
 
+	val darkModeTheme = repository.darkModeTheme.mode
+
 	@OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
 	fun setUser() {
 		_user.value = repository.user()
+	}
+
+	fun onSwitchDarkModeThemeClicked(view: View) {
+		repository.darkModeTheme.switchDarkModeTheme()
 	}
 
 	fun onBackClicked(view: View) {

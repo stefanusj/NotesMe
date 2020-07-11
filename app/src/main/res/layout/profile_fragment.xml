@@ -29,7 +29,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/mb_color"
+            android:id="@+id/mb_theme"
+            style="@style/Widget.NotesMe.Button.IconOnly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_3"
+            android:onClick="@{viewModel::onSwitchDarkModeThemeClicked}"
+            app:icon="@{viewModel.darkModeTheme.icon}"
+            app:layout_constraintEnd_toStartOf="@id/mb_delete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_3"
@@ -45,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="mb_back,mb_color" />
+            app:constraint_referenced_ids="mb_back,mb_delete" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_avatar"
@@ -77,7 +88,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_3"
             android:text="@{viewModel.user.email}"
-            android:textAppearance="?textAppearanceSubtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
