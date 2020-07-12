@@ -44,6 +44,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+    implementation "androidx.legacy:legacy-support-v4:$legacySupportVersion"
     //---------- Livedata and ViewModel ----------//
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
@@ -60,8 +61,8 @@ dependencies {
     //---------- Koin ----------//
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
     //---------- Firebase ----------//
+    implementation "com.google.firebase:firebase-analytics-ktx:$firebaseAnalyticsVersion"
     implementation "com.google.firebase:firebase-auth-ktx:$firebaseAuthVersion"
     implementation "com.google.firebase:firebase-firestore-ktx:$firebaseFirestoreVersion"
     implementation "com.google.firebase:firebase-storage-ktx:$firebaseStorageVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

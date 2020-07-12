@@ -2,6 +2,9 @@ package com.stefanusj.notesme.repository
 
 import android.app.Application
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
@@ -30,6 +33,7 @@ class AppRepository(application: Application): KoinComponent {
 
 	private val app = application as NotesMe
 
+	private val analytics: FirebaseAnalytics by lazy { Firebase.analytics }
 	private val auth: FirebaseAuth by lazy { Firebase.auth }
 	private val firestore: FirebaseFirestore by lazy { Firebase.firestore }
 	private val storage: FirebaseStorage by lazy { Firebase.storage }
@@ -37,10 +41,13 @@ class AppRepository(application: Application): KoinComponent {
 	private val noteDatabase = firestore.collection("notes")
 
 	fun user() = auth.currentUser
-	fun time() = Date().time
+	fun currentTimeStamp() = Date().time
 
 	suspend fun signIn(account: GoogleSignInAccount): AuthResult = withContext(IO) {
 		val credentials = GoogleAuthProvider.getCredential(account.idToken, null)
+		analytics.logEvent(FirebaseAnalytics.Event.LOGIN) {
+			param(FirebaseAnalytics.Param.METHOD, "google")
+		}
 		auth.signInWithCredential(credentials).await()
 	}
 
@@ -85,7 +92,7 @@ class AppRepository(application: Application): KoinComponent {
 			color = color,
 			title = title,
 			text = text,
-			lastModified = time()
+			lastModified = currentTimeStamp()
 		)
 		noteDatabase.add(note).await()
 	}
@@ -101,7 +108,7 @@ class AppRepository(application: Application): KoinComponent {
 				Note::color.name to color,
 				Note::title.name to title,
 				Note::text.name to text,
-				Note::lastModified.name to time()
+				Note::lastModified.name to currentTimeStamp()
 			)
 		).await()
 	}
