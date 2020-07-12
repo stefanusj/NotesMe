@@ -12,56 +12,48 @@
         android:layout_height="match_parent"
         tools:context=".ui.login.LoginFragment">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".5" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="?colorPrimary"
-            app:layout_constraintBottom_toTopOf="@id/guideline"
+        <ImageView
+            android:id="@+id/iv_illustration"
+            android:layout_width="@dimen/image_height"
+            android:layout_height="@dimen/image_height"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_undraw_notes"
+            app:layout_constraintBottom_toTopOf="@id/tv_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_icon"
-            android:layout_width="@dimen/icon_size_xl"
-            android:layout_height="@dimen/icon_size_xl"
-            android:layout_margin="@dimen/margin_3"
-            android:scaleType="centerInside"
-            android:src="@drawable/splash_icon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/et_title"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/padding_3"
+            android:layout_marginTop="@dimen/margin_5"
             android:text="@string/login_title"
             android:textAppearance="?textAppearanceHeadline5"
-            app:layout_constraintBottom_toTopOf="@id/guideline"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/tv_tos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_illustration" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_tos"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="@dimen/padding_3"
+            android:layout_margin="@dimen/margin_3"
+            android:gravity="center_horizontal"
             android:text="@string/login_tos"
-            android:textAppearance="?textAppearanceBody2"
+            app:layout_constraintBottom_toTopOf="@id/mb_sign_in_google"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/mb_sign_in_google"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:background="?colorPrimary"
+            android:padding="@dimen/padding_4"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_4"
             app:buttonSize="wide"
             app:colorScheme="auto"
             app:layout_constraintBottom_toBottomOf="parent"

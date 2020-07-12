@@ -15,7 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import com.stefanusj.notesme.NotesMe
-import com.stefanusj.notesme.model.Note
+import com.stefanusj.notesme.repository.model.Note
 import kotlinx.coroutines.Dispatchers.Default
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.tasks.await

@@ -14,8 +14,8 @@
     <string name="note_delete">Delete</string>
     <string name="note_delete_notification">Successfully delete note</string>
 
-    <string name="login_title">Selamat Datang !</string>
-    <string name="login_tos">Harap masuk menggunakan akun Google anda. Jangan pernah menyimpan hal yang penting dalam aplikasi ini.</string>
+    <string name="login_title">Welcome !</string>
+    <string name="login_tos">Never save anything important in this application.</string>
 
     <string name="hint_note_title">Title</string>
     <string name="hint_note_text">Type something…</string>

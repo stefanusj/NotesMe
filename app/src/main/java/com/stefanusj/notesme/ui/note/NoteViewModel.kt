@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.navigation.findNavController
-import com.stefanusj.notesme.model.Note
+import com.stefanusj.notesme.repository.model.Note
 import com.stefanusj.notesme.ui.BaseViewModel
 
 class NoteViewModel(application: Application): BaseViewModel(application) {

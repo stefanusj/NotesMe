@@ -6,7 +6,7 @@ import androidx.core.content.edit
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.stefanusj.notesme.R
-import com.stefanusj.notesme.model.DarkModeTheme
+import com.stefanusj.notesme.repository.model.DarkModeTheme
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import org.koin.core.parameter.parametersOf

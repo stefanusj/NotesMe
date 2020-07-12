@@ -1,4 +1,4 @@
-package com.stefanusj.notesme.model
+package com.stefanusj.notesme.repository.model
 
 import com.google.firebase.firestore.Exclude
 

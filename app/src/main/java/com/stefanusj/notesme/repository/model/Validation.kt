@@ -1,4 +1,4 @@
-package com.stefanusj.notesme.model
+package com.stefanusj.notesme.repository.model
 
 data class Validation(
 	val isValid: Boolean,

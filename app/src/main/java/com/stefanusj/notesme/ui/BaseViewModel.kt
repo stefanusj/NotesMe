@@ -7,8 +7,8 @@ import com.stefanusj.notesme.NotesMe
 import com.stefanusj.notesme.R
 import com.stefanusj.notesme.helper.Event
 import com.stefanusj.notesme.helper.ValidationException
-import com.stefanusj.notesme.model.Validation
 import com.stefanusj.notesme.repository.AppRepository
+import com.stefanusj.notesme.repository.model.Validation
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent

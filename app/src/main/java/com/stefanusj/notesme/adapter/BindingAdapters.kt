@@ -15,7 +15,11 @@ import java.util.*
 
 @BindingAdapter("avatar")
 fun avatar(view: ImageView, url: Uri?) {
-	view.load(url)
+	url.toString()
+		.replace("s96-c", "s512-c", true)
+		.also {
+			view.load(it)
+		}
 }
 
 @BindingAdapter("color")

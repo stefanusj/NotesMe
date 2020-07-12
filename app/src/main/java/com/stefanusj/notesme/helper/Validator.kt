@@ -1,7 +1,7 @@
 package com.stefanusj.notesme.helper
 
 import com.stefanusj.notesme.R
-import com.stefanusj.notesme.model.Validation
+import com.stefanusj.notesme.repository.model.Validation
 
 object Validator {
 

@@ -11,7 +11,7 @@
 
         <variable
             name="note"
-            type="com.stefanusj.notesme.model.Note" />
+            type="com.stefanusj.notesme.repository.model.Note" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

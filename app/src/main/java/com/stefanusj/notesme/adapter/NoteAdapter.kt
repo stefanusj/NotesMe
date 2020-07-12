@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.stefanusj.notesme.databinding.NoteAddItemBinding
 import com.stefanusj.notesme.databinding.NoteItemBinding
-import com.stefanusj.notesme.model.Note
+import com.stefanusj.notesme.repository.model.Note
 import com.stefanusj.notesme.ui.note.NoteFragmentDirections
 
 class NoteAdapter: ListAdapter<Note, RecyclerView.ViewHolder>(DIFF_CALLBACK) {

@@ -62,11 +62,12 @@
             android:id="@+id/iv_avatar"
             android:layout_width="@dimen/icon_size_xxl"
             android:layout_height="@dimen/icon_size_xxl"
-            android:layout_marginTop="@dimen/margin_5"
             app:avatar="@{viewModel.user.photoUrl}"
+            app:layout_constraintBottom_toTopOf="@id/tv_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/barrier"
+            app:layout_constraintVertical_chainStyle="packed"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.NotesMe.Circle"
             tools:src="@tools:sample/avatars" />
 
@@ -74,9 +75,10 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_4"
             android:text="@{viewModel.user.displayName}"
             android:textAppearance="?textAppearanceHeadline6"
+            app:layout_constraintBottom_toTopOf="@id/tv_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_avatar"
@@ -88,12 +90,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_3"
             android:text="@{viewModel.user.email}"
+            app:layout_constraintBottom_toTopOf="@id/mb_sign_out"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
             tools:text="@tools:sample/full_names" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_sign_out"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="@{viewModel::onSignOutClicked}"
