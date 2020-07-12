@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -65,4 +66,5 @@ dependencies {
     implementation "com.google.firebase:firebase-auth-ktx:$firebaseAuthVersion"
     implementation "com.google.firebase:firebase-firestore-ktx:$firebaseFirestoreVersion"
     implementation "com.google.firebase:firebase-storage-ktx:$firebaseStorageVersion"
+    implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
 }
