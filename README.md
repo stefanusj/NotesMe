@@ -25,9 +25,7 @@ Aplikasi ini dibuat dengan harapan bisa sebagai contoh dalam pembuatan aplikasi 
 
 Beberapa screenshot aplikasi
 
-<kbd><img src="#"  width="200" height="400"></kbd>
-<kbd><img src="#"  width="200" height="400"></kbd>
-<kbd><img src="#"  width="200" height="400"></kbd>
+<kbd><img src="https://stefanusj.com/storage/portfolios/notes-me.jpg"  width="500" height="500"></kbd>
 
 ## Library pendukung
 - [Kotlin](https://kotlinlang.org/) - Bahasa pemrograman android resmi dari Google.
