@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/stefanusj/NotesMe/master/app/src/main/ic_launcher-playstore.png" width="100">
 
-# Notes Me [![NotesMe](https://img.shields.io/badge/APK-brown?style=for-the-badge&logo=android)](https://github.com/stefanusj/NotesMe/tree/master/apk)
+# Notes Me [![NotesMe](https://img.shields.io/badge/APK-brown?style=for-the-badge&logo=android)](https://github.com/stefanusj/NotesMe/raw/master/apk/NotesMe.apk)
 
 [![platform](https://img.shields.io/badge/platform-Android-yellow.svg?style=flat-square)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-21%2B-green?style=flat-square)](https://android-arsenal.com/api?level=21)
