@@ -6,7 +6,7 @@
 [![API](https://img.shields.io/badge/API-21%2B-green?style=flat-square)](https://android-arsenal.com/api?level=21)
 
 **NotesMe** adalah contoh aplikasi yang mengimplementasikan *Modern Android App Architecture* dengan backend Firebase. 
-Aplikasi ini dibuat dengan menggunakan kotlin dan MVVM pattern serta Architecture Componen
+Aplikasi ini dibuat dengan menggunakan kotlin dan MVVM pattern serta Architecture Component.
 
 ## Tentang Aplikasi
 Aplikasi ini merupakan aplikasi sederhana dimana kita bisa menyimpan catatan ke dalam cloud.
@@ -22,9 +22,6 @@ Aplikasi ini dibuat dengan harapan bisa sebagai contoh dalam pembuatan aplikasi 
 - dan masih banyak lagi.
 
 ## Screenshots
-
-Beberapa screenshot aplikasi
-
 <kbd><img src="https://stefanusj.com/storage/portfolios/notes-me.jpg"  width="500" height="500"></kbd>
 
 ## Library pendukung
@@ -44,3 +41,10 @@ Beberapa screenshot aplikasi
 - [Koin](https://insert-koin.io) - Dependency Injection
 - [ColorSheet](https://github.com/msasikanth/ColorSheet) - Bottom Sheet untuk pemilihan warna notes.
 - [Coil](https://coil-kt.github.io/coil/) - Loader gambar yang support coroutines.
+
+## To do:
+- [ ] Login email.
+- [ ] Login facebook.
+- [ ] Tampilan read note.
+- [ ] Konfirmasi dialog edit dan hapus.
+- [ ] Migrasi ke Hilt.
