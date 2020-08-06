@@ -25,7 +25,6 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
-import java.util.*
 
 class AppRepository(application: Application): KoinComponent {
 
@@ -41,7 +40,7 @@ class AppRepository(application: Application): KoinComponent {
 	private val noteDatabase = firestore.collection("notes")
 
 	fun user() = auth.currentUser
-	fun currentTimeStamp() = Date().time
+	fun currentTimeStamp() = System.currentTimeMillis()
 
 	suspend fun signIn(account: GoogleSignInAccount): AuthResult = withContext(IO) {
 		val credentials = GoogleAuthProvider.getCredential(account.idToken, null)
